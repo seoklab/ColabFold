@@ -2,6 +2,7 @@ import time
 import tarfile
 from pathlib import Path
 from multiprocessing import Queue, Process
+import os
 
 import appdirs
 import tqdm
@@ -9,7 +10,7 @@ import requests
 
 # The data dir location logic switches between a version with and one without "params" because alphafold
 # always internally joins "params". (We should probably patch alphafold)
-default_data_dir = Path(appdirs.user_cache_dir(__package__ or "colabfold"))
+default_data_dir = Path(os.environ.get("COLABFOLD_DATA_DIR", "/store/colabfold"))
 
 def download(url, params_dir, size_queue, progress_queue):
     try:
