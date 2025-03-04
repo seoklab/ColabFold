@@ -21,7 +21,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.9"
 absl-py = "^1.0.0"
-jax = { version = "^0.4.20", optional = true }
+jax = { version = "^0.4.35", optional = true }
 matplotlib = "^3.2.2"
 tensorflow-macos = { version = "<2.14.0", markers = "sys_platform == 'darwin'" }
 tensorflow-cpu = { version = "^2.12.1", markers = "sys_platform != 'darwin' and platform_machine != 'aarch64'" }
@@ -46,7 +46,6 @@ pytest = "^6.2.5"
 
 [tool.poetry.extras]
 alphafold = ["alphafold-colabfold", "jax"]
-alphafold-minus-jax = ["alphafold-colabfold"]
 
 [tool.pytest.ini_options]
 addopts = "--tb=short"
