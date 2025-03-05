@@ -10,7 +10,7 @@ import requests
 
 # The data dir location logic switches between a version with and one without "params" because alphafold
 # always internally joins "params". (We should probably patch alphafold)
-default_data_dir = Path(os.environ.get("COLABFOLD_DATA_DIR", "/store/colabfold"))
+default_data_dir = Path(os.environ.get("COLABFOLD_DATA_DIR", "/data/galaxy4/user/share/colabfold"))
 
 def download(url, params_dir, size_queue, progress_queue):
     try:
